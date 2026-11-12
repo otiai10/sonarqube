@@ -113,5 +113,13 @@
       "\\.js$": "babel-jest",
       "\\.(ts|tsx)$": "ts-jest"
     }
+  },
+  "resolutions": {
+    "webpack": "4.47.0",
+    "babel-loader": "8.4.1",
+    "terser-webpack-plugin": "1.4.6"
+  },
+  "engines": {
+    "node": ">=26.13.1 <27"
   }
 }
