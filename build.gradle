@@ -400,9 +400,17 @@ subprojects {
     apply plugin: 'com.moowork.node'
 
     node {
-      version = '10.15.3'
-      yarnVersion = '1.15.2'
+      version = '26.13.1'
+      yarnVersion = '1.22.22'
       download = true
+    }
+    // Node.js配布先にはIvyメタデータがないため、配布物だけを取得する。
+    afterEvaluate {
+      repositories.withType(IvyArtifactRepository).all {
+        if (url.toString().startsWith('https://nodejs.org/dist')) {
+          metadataSources { artifact() }
+        }
+      }
     }
   }
 
